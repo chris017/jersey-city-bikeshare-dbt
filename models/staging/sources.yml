@@ -16,3 +16,12 @@ sources:
             description: "Endzeitpunkt der Fahrt"
           - name: bikeid
             description: "Eindeutige ID des Fahrrads"
+      - name: raw_bike_status_stream
+        description: "Echtzeit-Bike-Status-Events, via Kafka-Consumer aus dem Topic 'bike_status_events' geladen"
+        columns:
+          - name: event_id
+            description: "Eindeutige Event-ID, vom Producer generiert"
+          - name: event_timestamp
+            description: "Zeitpunkt, an dem das Event im Quellsystem entstand"
+          - name: loaded_at
+            description: "Zeitpunkt, an dem der Consumer die Zeile nach Snowflake geschrieben hat"
